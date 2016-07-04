@@ -1,0 +1,7 @@
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+    <header>{% block header %}{% endblock %}</header>
+    <div class="main">{% block main %}<p>Hello!</p>{% endblock %}</div>
+    <footer>{% block footer %}{% endblock %}</footer>
+{% endblock %}

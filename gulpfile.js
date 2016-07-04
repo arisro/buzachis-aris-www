@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    plumber = require('gulp-plumber'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -17,7 +18,7 @@ var gulp = require('gulp'),
     buffer = require('vinyl-buffer'),
     cssImport = require('gulp-cssimport');
 
-var srcScss     = './src/scss/**/*.scss',
+var srcScss     = ['./src/scss/**/*.scss', '!./src/scss/vendor.scss'],
     distCss     = './dist/css',
     srcJsApp    = './src/js/*.js',
     distJsApp   = './dist/js',
@@ -25,7 +26,9 @@ var srcScss     = './src/scss/**/*.scss',
     srcNunPath  = [ './src/html/templates' ],
     distHtml    = './dist',
     srcImages   = './src/images/**/*',
-    distImages  = './dist/images';
+    distImages  = './dist/images',
+    srcOthers  = './src/others/**/*',
+    distOthers  = './dist';
 var vendors = [ 'jquery' ];
 var vendorsCss = [
     './node_modules/flexboxgrid/css/flexboxgrid.min.css'
@@ -33,10 +36,11 @@ var vendorsCss = [
 
 gulp.task('sass', function () {
     return gulp.src(srcScss)
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({errLogToConsole: true,outputStyle: 'compressed'}))
         .pipe(autoprefixer({browsers: [ 'last 2 versions', '> 5%', 'Firefox ESR' ]}))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(distCss))
         .pipe(browserSync.stream());
 });
@@ -73,6 +77,7 @@ gulp.task('vendors', function() {
         global: true
     }, 'uglifyify')
     .bundle()
+        .pipe(plumber())
         .pipe(source('vendor.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
@@ -82,14 +87,16 @@ gulp.task('vendors', function() {
 
 gulp.task('vendorscss', function() {
     gulp.src('./src/scss/vendor.scss')
-        .pipe(sass({errLogToConsole: true}))
+        .pipe(plumber())
         .pipe(cssImport())
+        .pipe(sass({errLogToConsole: true, outputStyle: 'compressed'}))
         .pipe(gulp.dest(distCss))
         .pipe(browserSync.stream());
 });
 
 gulp.task('nunjucks', function() {
     return gulp.src(srcNun)
+        .pipe(plumber())
         .pipe(nunjucksRender({
             path: srcNunPath
         }))
@@ -98,11 +105,17 @@ gulp.task('nunjucks', function() {
 
 gulp.task('images', function() {
     return gulp.src(srcImages)
+        .pipe(plumber())
         .pipe(imagemin({
             progressive: true,
             use: [pngquant()]
         }))
         .pipe(gulp.dest(distImages));
+});
+
+gulp.task('others', function() {
+    return gulp.src(srcOthers)
+        .pipe(gulp.dest(distOthers));
 });
 
 gulp.task('bs', function() {
@@ -114,9 +127,11 @@ gulp.task('bs', function() {
     });
 });
 
-gulp.task('default', ['images', 'sass', 'vendors', 'vendorscss', 'scripts', 'nunjucks', 'bs'], function() {
-    gulp.watch(srcScss, ['sass', 'vendorscss']);
+gulp.task('default', ['images', 'sass', 'vendors', 'vendorscss', 'others', 'scripts', 'nunjucks', 'bs'], function() {
+    gulp.watch('./src/scss/vendor.scss', ['vendorscss']);
+    gulp.watch(srcScss, ['sass']);
     gulp.watch(srcJsApp, ['vendors', 'scripts']);
+    gulp.watch(srcOthers, ['others']);
     gulp.watch('./src/html/**/*', ['nunjucks']);
     gulp.watch(srcImages, ['images']);
 });

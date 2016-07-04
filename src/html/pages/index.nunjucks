@@ -1,9 +1,30 @@
-{% extends "layout.nunjucks" %}
+{% extends "simple.nunjucks" %}
 
 {% block pageStyles %}
     <link rel="stylesheet" href="/css/pages/index.css">
 {% endblock %}
 
-{% block content %}
-    <h1>Index page</h1>
+{% block pageTitle %}Welcome to this website{% endblock %}
+{% block pageDescription %}Personal website{% endblock %}
+
+{% block header %}
+    <div class="container">
+        <div class="row header-container">
+            <div class="col-xs-12 col-sm-4 end-sm header-container-logo">
+                logo
+            </div>
+            <div class="col-xs-12 col-sm-8 header-container-about">
+                about / quote
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <p>Hello there!</p>
+    <p>some stuff</p>
+{% endblock %}
+
+{% block footer %}
+    social / contact / footer
 {% endblock %}

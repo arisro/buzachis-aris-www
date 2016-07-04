@@ -1,3 +1,14 @@
-body {
-  color: blue;
+@media only screen and (min-width: 48em) {
+}
+
+.header-container {
+  margin: 40px 0;
+}
+
+.header-container-logo {
+  background-color: #49412c;
+}
+
+.header-container-about {
+  background-color: #fff;
 }

@@ -23,6 +23,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^3.0.1",
     "gulp-nunjucks-render": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "imagemin-pngquant": "^5.0.0",
@@ -33,6 +34,7 @@
   },
   "dependencies": {
     "flexboxgrid": "^6.3.0",
-    "gulp-cssimport": "^3.0.2"
+    "gulp-cssimport": "^3.0.2",
+    "normalize.css": "^4.2.0"
   }
 }
