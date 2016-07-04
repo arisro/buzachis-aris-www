@@ -14,7 +14,8 @@ var gulp = require('gulp'),
     babelify = require('babelify'),
     uglifyify = require('uglifyify'),
     source = require('vinyl-source-stream'),
-    buffer = require('vinyl-buffer');
+    buffer = require('vinyl-buffer'),
+    cssImport = require('gulp-cssimport');
 
 var srcScss     = './src/scss/**/*.scss',
     distCss     = './dist/css',
@@ -26,6 +27,9 @@ var srcScss     = './src/scss/**/*.scss',
     srcImages   = './src/images/**/*',
     distImages  = './dist/images';
 var vendors = [ 'jquery' ];
+var vendorsCss = [
+    './node_modules/flexboxgrid/css/flexboxgrid.min.css'
+];
 
 gulp.task('sass', function () {
     return gulp.src(srcScss)
@@ -74,7 +78,14 @@ gulp.task('vendors', function() {
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(distJsApp))
+});
 
+gulp.task('vendorscss', function() {
+    gulp.src('./src/scss/vendor.scss')
+        .pipe(sass({errLogToConsole: true}))
+        .pipe(cssImport())
+        .pipe(gulp.dest(distCss))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('nunjucks', function() {
@@ -103,8 +114,8 @@ gulp.task('bs', function() {
     });
 });
 
-gulp.task('default', ['images', 'sass', 'vendors', 'scripts', 'nunjucks', 'bs'], function() {
-    gulp.watch(srcScss, ['sass']);
+gulp.task('default', ['images', 'sass', 'vendors', 'vendorscss', 'scripts', 'nunjucks', 'bs'], function() {
+    gulp.watch(srcScss, ['sass', 'vendorscss']);
     gulp.watch(srcJsApp, ['vendors', 'scripts']);
     gulp.watch('./src/html/**/*', ['nunjucks']);
     gulp.watch(srcImages, ['images']);
