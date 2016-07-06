@@ -8,21 +8,65 @@
 {% block pageDescription %}Personal website{% endblock %}
 
 {% block header %}
-    <div class="container">
-        <div class="row header-container">
-            <div class="col-xs-12 col-sm-4 end-sm header-container-logo">
-                logo
+    <div class="container-fluid header-container">
+        <div class="row">
+            <div class="col-xs-12 center-xs header-container-logo">
+                <div class="logo-border">
+                    <img class="logo-image" src="/images/logo.png" title="Logo" alt="Logo" />
+                </div>
             </div>
-            <div class="col-xs-12 col-sm-8 header-container-about">
-                about / quote
+        </div>
+        <div class="row">
+            <div class="col-xs-12 header-container-about">
+                <div class="about-text">
+                    <span class="about-name">Aris Buzachis</span>
+                    <br />
+                    <span class="about-title">Web developer</span>
+                    <br />
+                    <span class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid menu-container">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#aboutme">About</a></li>
+                        <li><a href="#">My skills</a></li>
+                        <li><a href="#">Experience</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="https://blog.buzachis-aris.com">Blog</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block main %}
-    <p>Hello there!</p>
-    <p>some stuff</p>
+<div class="container-fluid main-container">
+    <div class="row">
+        <div id="aboutme" class="col-xs-12 center-xs">
+            <section class="title-box title-box-about">
+                <h2>About me</h2>
+                <span class="title-icon"></span>
+            </section>
+            <p>Well hello there!</p>
+        </div>
+
+        <div id="myskills" class="col-xs-12 center-xs">
+            <section class="title-box title-box-skills">
+                <h2>My skills</h2>
+                <span class="title-icon"></span>
+            </section>
+            <p>SKILLZZZZ</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block footer %}

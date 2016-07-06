@@ -1,0 +1,28 @@
+.menu-container {
+  padding: 1.5em 0;
+  border-bottom: 1px solid #DDD;
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      list-style: none;
+
+      a {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: $color1;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          background: none;
+          color: $color3;
+        }
+      }
+    }
+  }
+}

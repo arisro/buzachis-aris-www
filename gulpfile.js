@@ -30,12 +30,9 @@ var srcScss     = ['./src/scss/**/*.scss', '!./src/scss/vendor.scss'],
     srcOthers  = './src/others/**/*',
     distOthers  = './dist';
 var vendors = [ 'jquery' ];
-var vendorsCss = [
-    './node_modules/flexboxgrid/css/flexboxgrid.min.css'
-];
 
 gulp.task('sass', function () {
-    return gulp.src(srcScss)
+    gulp.src(srcScss)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({errLogToConsole: true,outputStyle: 'compressed'}))

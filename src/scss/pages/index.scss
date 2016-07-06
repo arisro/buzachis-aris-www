@@ -1,14 +1,68 @@
+@import '../common';
+@import '../components/menu';
+
 @media only screen and (min-width: 48em) {
 }
 
 .header-container {
-  margin: 40px 0;
+  background: $color3;
+  background: linear-gradient(to bottom, $color3 40%, lighten($color3, 10%) 100%);
+  padding: 1em 0 1em 0;
+  height: 16em;
+
+  &:before {
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 18em;
+    width: 50%;
+    background: url('/images/code.png') 0 0 no-repeat;
+    border-right: lighten($color3, 15%) solid 1px;
+    z-index: 1;
+  }
+
+  .logo-image {
+    width: 4em;
+    height: 4em;
+    padding: 2em;
+    border-radius: 4em;
+    background-color: $color1;
+    margin-top: .5em;
+  }
+  .logo-border {
+    margin: auto;
+    width: 9em;
+    height: 9em;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8em;
+  }
+
+  .header-container-logo {
+    z-index: 11;
+  }
+
+  .header-container-about {
+    padding-left: 50%;
+
+    .about-text {
+      margin: -1em 2em 0 3em;
+      color: #fff;
+
+      .about-name {
+        font-size: 2em;
+      }
+      .about-title {
+
+      }
+    }
+  }
 }
 
-.header-container-logo {
-  background-color: #49412c;
+.main-container {
+  background-color: #ededed;
 }
 
-.header-container-about {
+#myskills {
   background-color: #fff;
 }

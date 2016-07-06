@@ -1,0 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+  color: $text-color;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1em;
+  margin-bottom: 22px;
+}

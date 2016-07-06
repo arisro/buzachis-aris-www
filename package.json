@@ -33,7 +33,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "flexboxgrid": "^6.3.0",
     "gulp-cssimport": "^3.0.2",
     "normalize.css": "^4.2.0"
   }
