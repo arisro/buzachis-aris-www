@@ -64,6 +64,10 @@
                 <span class="title-icon"></span>
             </section>
             <p>SKILLZZZZ</p>
+            <br/>
+            <div class="progress-bar skill-progress-bar">
+                <div class="bar">&nbsp;</div>
+            </a>
         </div>
     </div>
 </div>

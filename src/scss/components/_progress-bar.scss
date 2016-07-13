@@ -1,0 +1,11 @@
+.progress-bar {
+  height: 20px;
+  border: 1px solid $color1;
+  border-radius: 2px;
+
+  .bar {
+    background-color: $color3;
+    width: 50%;
+    height: 100%;
+  }
+}
