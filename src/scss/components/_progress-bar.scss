@@ -1,11 +1,21 @@
 .progress-bar {
-  height: 20px;
-  border: 1px solid $color1;
-  border-radius: 2px;
+  height: 2em;
+  border: 2px solid $color3;
+  border-radius: 1em;
+  position: relative;
+
+  .title {
+    position: absolute;
+    top: .4em;
+    left: 1em;
+    text-transform: uppercase;
+    color: #fff;
+  }
 
   .bar {
     background-color: $color3;
     width: 50%;
-    height: 100%;
+    height: 2em;
+    border-radius: .8em;
   }
 }

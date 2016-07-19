@@ -27,7 +27,9 @@ var srcScss     = ['./src/scss/**/*.scss', '!./src/scss/vendor.scss'],
     distHtml    = './dist',
     srcImages   = './src/images/**/*',
     distImages  = './dist/images',
-    srcOthers  = './src/others/**/*',
+    srcFonts    = './src/fonts/**/*',
+    distFonts   = './dist/fonts',
+    srcOthers   = './src/others/**/*',
     distOthers  = './dist';
 var vendors = [ 'jquery' ];
 
@@ -115,6 +117,11 @@ gulp.task('others', function() {
         .pipe(gulp.dest(distOthers));
 });
 
+gulp.task('fonts', function() {
+    return gulp.src(srcFonts)
+        .pipe(gulp.dest(distFonts));
+});
+
 gulp.task('bs', function() {
     browserSync.init({
         server: {
@@ -124,11 +131,12 @@ gulp.task('bs', function() {
     });
 });
 
-gulp.task('default', ['images', 'sass', 'vendors', 'vendorscss', 'others', 'scripts', 'nunjucks', 'bs'], function() {
+gulp.task('default', ['images', 'fonts', 'sass', 'vendors', 'vendorscss', 'others', 'scripts', 'nunjucks', 'bs'], function() {
     gulp.watch('./src/scss/vendor.scss', ['vendorscss']);
     gulp.watch(srcScss, ['sass']);
     gulp.watch(srcJsApp, ['vendors', 'scripts']);
     gulp.watch(srcOthers, ['others']);
+    gulp.watch(srcFonts, ['fonts']);
     gulp.watch('./src/html/**/*', ['nunjucks']);
     gulp.watch(srcImages, ['images']);
 });

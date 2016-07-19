@@ -1,0 +1,29 @@
+{% macro skillItem(name, percent) %}
+    <div class="skill-item">
+        <div class="progress-bar" data-level="{{ percent }}">
+            <div class="title">{{ name }}</div>
+            <div class="bar"></div>
+        </div>
+        <div class="level">{{ percent }}%</div>
+    </div>
+{% endmacro %}
+
+{% macro timelineItem(side) %}
+    <div class="row timeline timeline-side-{{ side }}">
+        <div class="col-xs-6 work-text">
+            <h5>Bitdefender</h5>
+            <div class="work-position">Web developer</div>
+            <p class="excerpt">
+                Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci. Vestibulum gravida nulla nec justo congue, vitae sodales massa ullamcorper...
+            </p>
+        </div>
+        <div class="col-xs-6 work-date">
+            <div class="date-box">
+                jan 2005 - feb 2009
+            </div>
+        </div>
+        <div class="work-icon">
+            <img src="/images/timeline-icon.png" alt="X" title="Timeline icon" />
+        </div>
+    </div>
+{% endmacro %}

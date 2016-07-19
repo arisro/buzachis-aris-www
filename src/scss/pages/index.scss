@@ -1,6 +1,8 @@
 @import '../common';
 @import '../components/menu';
 @import '../components/progress-bar';
+@import '../components/timeline';
+@import '../components/social-icons';
 
 @media only screen and (min-width: 48em) {
 
@@ -65,13 +67,56 @@
   background-color: #ededed;
 }
 
+#aboutme {
+  .aboutme-image {
+    width: 4em;
+    height: 4em;
+    padding: 2em;
+    border-radius: 4em;
+    background-color: $color1;
+    margin-top: .5em;
+    margin-right: 0.5em;
+  }
+  .aboutme-border {
+    margin-left: auto;
+    width: 9em;
+    height: 9em;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8em;
+  }
+}
+
 #myskills {
   background-color: #fff;
 
+  .row-skills {
+    .end-xs > div {
+      margin-left: auto;
+    }
+  }
+}
+
+.skill-item {
+  position: relative;
+  margin-bottom: 1em;
+
   .progress-bar {
-    width: 200px;
+    margin-right: 4em;
   }
-  .skill-progress-bar {
-    /*height: 60px;*/
+  .level {
+    position: absolute;
+    top: 0.2em;
+    right: 0;
+    font: 24px/26px 'Montserrat', sans-serif;
+    color: #969696;;
   }
+}
+
+#contact {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #ededed;
+  padding: 2em 0;
 }

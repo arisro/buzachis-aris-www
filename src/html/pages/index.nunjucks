@@ -1,4 +1,5 @@
 {% extends "simple.nunjucks" %}
+{% import "./macros/elements.nunjucks" as elements %}
 
 {% block pageStyles %}
     <link rel="stylesheet" href="/css/pages/index.css">
@@ -49,30 +50,102 @@
 
 {% block main %}
 <div class="container-fluid main-container">
-    <div class="row">
-        <div id="aboutme" class="col-xs-12 center-xs">
-            <section class="title-box title-box-about">
-                <h2>About me</h2>
-                <span class="title-icon"></span>
-            </section>
-            <p>Well hello there!</p>
+    <div id="aboutme" class="row">
+        <div class="col-xs-3 col-xs-offset-2 end-xs">
+            <div class="aboutme-border">
+                <img class="aboutme-image" src="/images/logo.png" title="Photo" alt="Photo" />
+            </div>
         </div>
+        <div class="col-xs-5 start-xs">
+            <section class="title-box title-box-about">
+                <h2>Hey</h2>
+                <p class="aboutme-text">
+                    I'm a full-stack developer based in Bucharest, Romania.
+                    I am very passionate about creating web applications.
+                </p>
+            </section>
+        </div>
+    </div>
 
-        <div id="myskills" class="col-xs-12 center-xs">
+    <div class="row" id="myskills">
+        <div class="col-xs-12 center-xs">
             <section class="title-box title-box-skills">
                 <h2>My skills</h2>
                 <span class="title-icon"></span>
             </section>
-            <p>SKILLZZZZ</p>
-            <br/>
-            <div class="progress-bar skill-progress-bar">
-                <div class="bar">&nbsp;</div>
-            </a>
+            <div class="row row-skills">
+                <div class="col-xs-offset-1 col-xs-5 end-xs">
+                    {{ elements.skillItem('PHP', 100) }}
+                    {{ elements.skillItem('SQL', 100) }}
+                    {{ elements.skillItem('Architecture', 100) }}
+                    {{ elements.skillItem('SysOps', 80) }}
+                    {{ elements.skillItem('Node.js, Ruby, Java and others', 50) }}
+                </div>
+                <div class="col-xs-5 start-xs">
+                    {{ elements.skillItem('JavaScript', 100) }}
+                    {{ elements.skillItem('HTML', 100) }}
+                    {{ elements.skillItem('SEO', 100) }}
+                    {{ elements.skillItem('CSS', 90) }}
+                    {{ elements.skillItem('Design', 75) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="experience">
+        <div class="col-xs-10 col-xs-offset-1    center-xs">
+            <section class="title-box">
+                <h2>Work experience</h2>
+                <span class="title-icon"></span>
+            </section>
+            {{ elements.timelineItem('left') }}
+            {{ elements.timelineItem('right') }}
+            {{ elements.timelineItem('left') }}
+            {{ elements.timelineItem('right') }}
+        </div>
+    </div>
+
+    <div class="row" id="contact">
+        <div class="col-xs-12 center-xs">
+            <section class="title-box">
+                <h2>I can help you</h2>
+                <span class="title-icon"></span>
+            </section>
+            I’m currently available for freelance work.
+            If you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.
+            {% include "partials/social_buttons.nunjucks" %}
+
+            <div class="contact-container">
+                <form id="contactForm">
+                    <div class="row">
+                        <div class="col-xs-5 col-xs-offset-1">
+                            <input type="text" />
+                        </div>
+                        <div class="col-xs-5">
+                            <input type="text" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <textarea>test</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <input type="submit" value="Send message" />
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
 
 {% block footer %}
-    social / contact / footer
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 center-xs">
+            © 2016 <a href="https://www.buzachis-aris.com" title="Aris Buzachis - Web developer">Aris Buzachis</a>. All rights reserved.
+        </div>
+    </div>
 {% endblock %}

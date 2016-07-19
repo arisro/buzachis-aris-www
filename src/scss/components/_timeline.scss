@@ -1,0 +1,86 @@
+$timeline-color: #888;
+
+.timeline {
+  position: relative;
+
+  .work-text {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .work-date {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .work-icon {
+    position: absolute;
+    left: 50%;
+    margin-left: -21px;
+    margin-top: -21px;
+    top: 2.9em;
+  }
+
+  .date-box {
+    border-radius: .8em;
+    padding: 1em 1.5em;
+    display: inline-block;
+    font: 18px/20px 'Montserrat', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    background: $color2;
+    position: relative;
+  }
+
+  .date-box:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  &.timeline-side-left {
+    .work-text {
+      text-align: right;
+      padding-right: 2em;
+      order: -1;
+      border-right: 1px solid $timeline-color;
+    }
+    .work-date {
+      text-align: left;
+    }
+    .date-box {
+      margin-left: 1em;
+    }
+    .date-box:before {
+      left: -10px;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent $color2 transparent transparent;
+    }
+  }
+  &.timeline-side-right {
+    .work-text {
+      text-align: left;
+      padding-left: 2em;
+      order: 1;
+      border-left: 1px solid $timeline-color;
+    }
+    .work-date {
+      text-align: right;
+      margin-right: -1px;
+    }
+    .date-box {
+      margin-right: 1em;
+    }
+    .date-box:before {
+      right: -10px;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent $color2;
+    }
+  }
+
+  h5 {
+    margin: 0;
+  }
+}
