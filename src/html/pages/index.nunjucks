@@ -53,7 +53,7 @@
     <div id="aboutme" class="row">
         <div class="col-xs-3 col-xs-offset-2 end-xs">
             <div class="aboutme-border">
-                <img class="aboutme-image" src="/images/logo.png" title="Photo" alt="Photo" />
+                <img class="aboutme-image" src="/images/pic.png" title="Photo" alt="Photo" />
             </div>
         </div>
         <div class="col-xs-5 start-xs">

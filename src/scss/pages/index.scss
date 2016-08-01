@@ -27,9 +27,6 @@
   }
 
   .logo-image {
-    width: 4em;
-    height: 4em;
-    padding: 2em;
     border-radius: 4em;
     background-color: $color1;
     margin-top: .5em;
@@ -69,19 +66,17 @@
 
 #aboutme {
   .aboutme-image {
-    width: 4em;
-    height: 4em;
-    padding: 2em;
-    border-radius: 4em;
-    background-color: $color1;
-    margin-top: .5em;
-    margin-right: 0.5em;
+    width: 8em;
+    height: 8em;
+    border-radius: 5em;
+    margin-top: .3em;
+    margin-right: .3em;
   }
   .aboutme-border {
     margin-left: auto;
-    width: 9em;
-    height: 9em;
-    background: rgba(255, 255, 255, 0.5);
+    width: 8.6em;
+    height: 8.6em;
+    background: rgba(38, 34, 22, 0.6);
     border-radius: 8em;
   }
 }
