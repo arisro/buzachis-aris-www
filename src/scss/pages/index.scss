@@ -51,10 +51,24 @@
       color: #fff;
 
       .about-name {
-        font-size: 2em;
+        font-family: 'Cinzel', serif;
+        font-size: 2.5em;
+        font-weight: bold;
+        margin: 0;
+
+        .first-letter {
+          font-size: 1.3em;
+        }
       }
       .about-title {
-
+        font-weight: bold;
+        font-size: 1.2em;
+        margin: 0;
+        color: $ccolor2;
+      }
+      .quote {
+        font-style: italic;
+        margin: .2em 0 0 0;
       }
     }
   }
@@ -64,25 +78,51 @@
   background-color: #ededed;
 }
 
+.title-box {
+  h2 {
+    text-transform: uppercase;
+    margin: 1.5em 0;
+    font-size: 2em;
+  }
+}
+
 #aboutme {
+  padding: 8em 0 ;
+
   .aboutme-image {
-    width: 8em;
-    height: 8em;
+    width: 9em;
+    height: 9em;
     border-radius: 5em;
-    margin-top: .3em;
-    margin-right: .3em;
+    margin-top: .5em;
+    margin-right: .5em;
   }
   .aboutme-border {
     margin-left: auto;
-    width: 8.6em;
-    height: 8.6em;
-    background: rgba(38, 34, 22, 0.6);
-    border-radius: 8em;
+    width: 10em;
+    height: 10em;
+    background: rgb(255, 255, 255);
+    border-radius: 10em;
+  }
+
+  .aboutme-pic {
+    margin-top: 1em;
+  }
+
+  .title-box {
+    h3 {
+      font-size: 1.5em;
+      color: $ccolor1;
+    }
+  }
+
+  .aboutme-text {
+    font-size: 1.3em;
   }
 }
 
 #myskills {
   background-color: #fff;
+  padding-bottom: 3em;
 
   .row-skills {
     .end-xs > div {
@@ -102,13 +142,17 @@
     position: absolute;
     top: 0.2em;
     right: 0;
-    font: 24px/26px 'Montserrat', sans-serif;
     color: #969696;;
   }
 }
 
+#experience {
+  padding-bottom: 3em;
+}
+
 #contact {
   background-color: #fff;
+  padding-bottom: 5em;
 }
 
 footer {

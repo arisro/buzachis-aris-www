@@ -11,7 +11,7 @@
 {% macro timelineItem(side) %}
     <div class="row timeline timeline-side-{{ side }}">
         <div class="col-xs-6 work-text">
-            <h5>Bitdefender</h5>
+            <h5><a href="#">Bitdefender</a></h5>
             <div class="work-position">Web developer</div>
             <p class="excerpt">
                 Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci. Vestibulum gravida nulla nec justo congue, vitae sodales massa ullamcorper...

@@ -5,9 +5,6 @@
     <link rel="stylesheet" href="/css/pages/index.css">
 {% endblock %}
 
-{% block pageTitle %}Welcome to this website{% endblock %}
-{% block pageDescription %}Personal website{% endblock %}
-
 {% block header %}
     <div class="container-fluid header-container">
         <div class="row">
@@ -20,12 +17,9 @@
         <div class="row">
             <div class="col-xs-12 header-container-about">
                 <div class="about-text">
-                    <span class="about-name">Aris Buzachis</span>
-                    <br />
-                    <span class="about-title">Web developer</span>
-                    <br />
-                    <span class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt.</span>
+                    <p class="about-name"><span class="first-letter">A</span>ris <span class="first-letter">B</span>uzachis</p>
+                    <p class="about-title">Web developer</p>
+                    <p class="quote">I would love to know more about that awesome project that you're wondering if I could help you with!</p>
                 </div>
             </div>
         </div>
@@ -37,10 +31,10 @@
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#aboutme">About</a></li>
-                        <li><a href="#">My skills</a></li>
-                        <li><a href="#">Experience</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="https://blog.buzachis-aris.com">Blog</a></li>
+                        <li><a href="#myskills">My skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://blog.buzachis-aris.com" target="_blank">Blog</a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,14 +45,14 @@
 {% block main %}
 <div class="container-fluid main-container">
     <div id="aboutme" class="row">
-        <div class="col-xs-3 col-xs-offset-2 end-xs">
+        <div class="aboutme-pic col-xs-3 col-xs-offset-2 end-xs">
             <div class="aboutme-border">
                 <img class="aboutme-image" src="/images/pic.png" title="Photo" alt="Photo" />
             </div>
         </div>
         <div class="col-xs-5 start-xs">
-            <section class="title-box title-box-about">
-                <h2>Hey</h2>
+            <section class="title-box">
+                <h3>Hey.</h3>
                 <p class="aboutme-text">
                     I'm a full-stack developer based in Bucharest, Romania.
                     I am very passionate about creating web applications.
@@ -69,7 +63,7 @@
 
     <div class="row" id="myskills">
         <div class="col-xs-12 center-xs">
-            <section class="title-box title-box-skills">
+            <section class="title-box">
                 <h2>My skills</h2>
                 <span class="title-icon"></span>
             </section>
@@ -145,7 +139,7 @@
 {% block footer %}
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 center-xs">
-            © 2016 <a href="https://www.buzachis-aris.com" title="Aris Buzachis - Web developer">Aris Buzachis</a>. All rights reserved.
+            © 2016 <a href="https://www.buzachis-aris.com" title="Portofolio of Buzachis Aris">Aris Buzachis</a>. All rights reserved.
         </div>
     </div>
 {% endblock %}

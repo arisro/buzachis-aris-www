@@ -6,10 +6,27 @@ $timeline-color: #888;
   .work-text {
     padding-top: 1em;
     padding-bottom: 1em;
+
+    h5 {
+      margin: 0;
+      font-size: 1.3em;
+
+      a {
+        color: $color2;
+
+        &:hover {
+          color: $color4;
+        }
+      }
+    }
   }
   .work-date {
     padding-top: 1em;
     padding-bottom: 1em;
+  }
+
+  .work-position {
+    color: $ccolor1;
   }
 
   .work-icon {
@@ -78,9 +95,5 @@ $timeline-color: #888;
       border-width: 10px 0 10px 10px;
       border-color: transparent transparent transparent $color2;
     }
-  }
-
-  h5 {
-    margin: 0;
   }
 }
